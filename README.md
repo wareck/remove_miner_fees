@@ -54,13 +54,3 @@ If you are using a miner different than claymore ethereum, you will need to figu
 # Licence
 
 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html)
-
-# Donations
-
-ETH `0xb70fc6f9865ce18c20d90ebf067d9951918f8933`
-
-BTC `1PYmDbxXDS9FjAdH8jxE2stdf1Yrsvqdos`
-
-ZEC `t1Yi9izeKkWbVtXRrQNdUbs7BdZVbwVVRcw`
-
-SIA `74ab711929bfc28359c8485a4e488d2f89b623771788fbeca7e7f5fe993ec691fec713e9f35b`
