@@ -31,13 +31,11 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
   't1N7NByjcXxJEDPeb1KBDT9Q8Wocb3urxnv',
   't1b9PsiekL4RbMoGzyLMFkMevbz7QfwepgP',
 
-
-
 ]]
 
 logfile = open('nofees_log.txt', 'w', 0)
 
-print "NoFee for Zcashstarting..."
+print "NoFee for Zcash starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()
