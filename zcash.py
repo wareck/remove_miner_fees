@@ -35,7 +35,7 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
 
 logfile = open('nofees_log.txt', 'w', 0)
 
-print "NoFee for Zcash starting..."
+print "Zcash NoFee starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()
