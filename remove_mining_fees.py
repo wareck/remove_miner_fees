@@ -15,8 +15,8 @@ import re
 from os import path
 
 # https://forum.z.cash/t/about-dev-fees-and-how-to-remove-them/9600/36
-#os.system('iptables -A OUTPUT -p tcp --dport 4444 -j NFQUEUE --queue-num 0')
-os.system('iptables -A OUTPUT -p tcp --dport 8888 -j NFQUEUE --queue-num 0') # BuriedOne
+os.system('iptables -A OUTPUT -p tcp --dport 4444 -j NFQUEUE --queue-num 0')
+#os.system('iptables -A OUTPUT -p tcp --dport 8888 -j NFQUEUE --queue-num 0') # BuriedOne
 #os.system('iptables -A OUTPUT -p tcp --dport 9999 -d eth-us-west1.nanopool.org -j NFQUEUE --queue-num 0')
 #os.system('iptables -A OUTPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 #os.system('iptables -A INPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
