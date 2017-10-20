@@ -15,13 +15,12 @@ import re
 from os import path
 
 # https://forum.z.cash/t/about-dev-fees-and-how-to-remove-them/9600/36
-os.system('iptables -A OUTPUT -p tcp --dport 4444 -j NFQUEUE --queue-num 0') # Ethermine
-#os.system('iptables -A OUTPUT -p tcp --dport 8888 -j NFQUEUE --queue-num 0') # BuriedOne ETH
+os.system('iptables -A OUTPUT -p tcp --dport 8008 -j NFQUEUE --queue-num 0') # Ubiq
 #os.system('iptables -A OUTPUT -p tcp --dport 9999 -d eth-us-west1.nanopool.org -j NFQUEUE --queue-num 0')
 #os.system('iptables -A OUTPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 #os.system('iptables -A INPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 
-my_eth_address = '0x345b006F98a231cD846f6a8a8151F9999bBD2f2A'
+my_eth_address = '0x9841B2452A1a77bD8b32723C6323a638a3219326'
 
 addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x in [
   # tcpdump -i enp4s0 host eth-us-west1.nanopool.org -X > log_mining_activity.txt
@@ -53,7 +52,7 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
 
 logfile = open('nofees_log.txt', 'w', 0)
 
-print "NoFee V1.1 starting..."
+print "NoFee V1.1 Ubiq starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()

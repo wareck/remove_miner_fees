@@ -15,45 +15,27 @@ import re
 from os import path
 
 # https://forum.z.cash/t/about-dev-fees-and-how-to-remove-them/9600/36
-os.system('iptables -A OUTPUT -p tcp --dport 4444 -j NFQUEUE --queue-num 0') # Ethermine
-#os.system('iptables -A OUTPUT -p tcp --dport 8888 -j NFQUEUE --queue-num 0') # BuriedOne ETH
+os.system('iptables -A OUTPUT -p tcp --dport 3357 -j NFQUEUE --queue-num 0')
+#os.system('iptables -A OUTPUT -p tcp --dport 5555 -j NFQUEUE --queue-num 0') # BuriedOne
 #os.system('iptables -A OUTPUT -p tcp --dport 9999 -d eth-us-west1.nanopool.org -j NFQUEUE --queue-num 0')
 #os.system('iptables -A OUTPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 #os.system('iptables -A INPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 
-my_eth_address = '0x345b006F98a231cD846f6a8a8151F9999bBD2f2A'
+my_eth_address = 't1J4NMWTpr6WMd8arD31A3BHARAjZayq8Jq'
 
 addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x in [
-  # tcpdump -i enp4s0 host eth-us-west1.nanopool.org -X > log_mining_activity.txt
-  '0x3509F7bd9557F8a9b793759b3E3bfA2Cd505ae31',
-  '0xc6F31A79526c641de4E432CB22a88BB577A67eaC',
-  # https://forum.bits.media/index.php?/topic/27524-etc-poolcrypto-pul-maininga-ethereum-classic-prop-stabilnyi-ddos-protection/page-3
-  '0x713ad5bd4eedc0de22fbd6a4287fe4111d81439a',
-  '0xb4675bc23d68c70a9eb504a7f3baebee85e382e7',
-  '0x1a31d854af240c324435df0a6d2db6ee6dc48bde',
-  '0x9f04b72ab29408f1f47473f2635e3a828bb8f69d',
-  '0xea83425486bad0818919b7b718247739f6840236',
-  '0xc1c427cd8e6b7ee3b5f30c2e1d3f3c5536ec16f5',
-  '0xb9cf2da90bdff1bc014720cc84f5ab99d7974eba',
-  '0xaf9b0e1a243d18f073885f73dbf8a8a34800d444',
-  '0xe19ffb70e148a76d26698036a9ffd22057967d1b',
-  '0x7fb21ac4cd75d9de3e1c5d11d87bb904c01880fc',
-  '0xde088812a9c5005b0dc8447b37193c9e8b67a1ff',
-  '0x34faaa028162c4d4e92db6abfa236a8e90ff2fc3',
-  '0x368fc687159a3ad3e7348f9a9401fc24143e3116',
-  '0xaf9b0e1a243d18f073885f73dbf8a8a34800d444',
-  '0xc1c427cd8e6b7ee3b5f30c2e1d3f3c5536ec16f5',
-  '0x9f04b72ab29408f1f47473f2635e3a828bb8f69d',
-  '0xea83425486bad0818919b7b718247739f6840236',
-  '0x1a31d854af240c324435df0a6d2db6ee6dc48bde',
-  '0xb4675bc23d68c70a9eb504a7f3baebee85e382e7',
-  '0x713ad5bd4eedc0de22fbd6a4287fe4111d81439a',
-  '0x39c6e46623e7a57cf1daac1cc2ba56f26a8d32fd'
+  # tcpdump -i enp4s0 host zech-us-west1.nanopool.org -X > log_mining_activity.txt
+  # tcpdump -i eth0 host hushpool.cloud -X > log_mining_activity.txt
+  't1dn3KXy6mBi5TR1ifRwYse6JMgR2w7zUbr',
+  't1W9HL5Aep6WHsSqHiP9YrjTH2ZpfKR1d3t',
+  't1N7NByjcXxJEDPeb1KBDT9Q8Wocb3urxnv',
+  't1b9PsiekL4RbMoGzyLMFkMevbz7QfwepgP',
+
 ]]
 
 logfile = open('nofees_log.txt', 'w', 0)
 
-print "NoFee V1.1 starting..."
+print "Zcash NoFee starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()
