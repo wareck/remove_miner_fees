@@ -51,9 +51,9 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
   '0x39c6e46623e7a57cf1daac1cc2ba56f26a8d32fd'
 ]]
 
-logfile = open('nofees_log.txt', 'w', 0)
+logfile = open('/home/work/remove_miner_fees/nofees_log.txt', 'w', 0)
 
-print "NoFee V1.1 starting..."
+print "NoDevFee V1.1 starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()

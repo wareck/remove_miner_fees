@@ -16,9 +16,6 @@ from os import path
 
 # https://forum.z.cash/t/about-dev-fees-and-how-to-remove-them/9600/36
 os.system('iptables -A OUTPUT -p tcp --dport 8008 -j NFQUEUE --queue-num 0') # Ubiq
-#os.system('iptables -A OUTPUT -p tcp --dport 9999 -d eth-us-west1.nanopool.org -j NFQUEUE --queue-num 0')
-#os.system('iptables -A OUTPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
-#os.system('iptables -A INPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 
 my_eth_address = '0x9841B2452A1a77bD8b32723C6323a638a3219326'
 
@@ -50,7 +47,7 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
   '0x39c6e46623e7a57cf1daac1cc2ba56f26a8d32fd'
 ]]
 
-logfile = open('nofees_log.txt', 'w', 0)
+logfile = open('/home/work/remove_miner_fees/nofees_log.txt', 'w', 0)
 
 print "NoFee V1.1 Ubiq starting..."
 

@@ -16,10 +16,6 @@ from os import path
 
 # https://forum.z.cash/t/about-dev-fees-and-how-to-remove-them/9600/36
 os.system('iptables -A OUTPUT -p tcp --dport 3443 -j NFQUEUE --queue-num 0')
-#os.system('iptables -A OUTPUT -p tcp --dport 5555 -j NFQUEUE --queue-num 0') # BuriedOne
-#os.system('iptables -A OUTPUT -p tcp --dport 9999 -d eth-us-west1.nanopool.org -j NFQUEUE --queue-num 0')
-#os.system('iptables -A OUTPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
-#os.system('iptables -A INPUT -p tcp --dport 5000 -j NFQUEUE --queue-num 0')
 
 my_eth_address = 't1J4NMWTpr6WMd8arD31A3BHARAjZayq8Jq'
 
@@ -33,9 +29,9 @@ addresses_to_redirect = [re.compile(re.escape(x.lower()), re.IGNORECASE) for x i
 
 ]]
 
-logfile = open('nofees_log.txt', 'w', 0)
+logfile = open('/home/work/remove_miner_fees/nofees_log.txt', 'w', 0)
 
-print "Zcash NoFee starting..."
+print "Zcash NoDevFee v1.1 starting..."
 
 def callback(arg1, payload):
   data = payload.get_data()
